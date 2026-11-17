@@ -1,0 +1,586 @@
+{
+ "name": "SkillTwin market models v1",
+ "trained_at": "2026-10-07",
+ "seed": 42,
+ "source": "SAS CU hackathon file 'Analytics Jobs.csv' (job postings). Raw rows are not stored in the app.",
+ "data": {
+  "postings_total": 15841,
+  "repeat_groups_handled": 14840,
+  "postings_mentioning_an_app_skill": 5532,
+  "pay_rows": 5532,
+  "segment_rows": 4531,
+  "skills_in_vocabulary": 37,
+  "skills_used_by_model": [
+   "python",
+   "git",
+   "linux",
+   "networking",
+   "algorithms",
+   "sql",
+   "excel",
+   "statistics",
+   "data visualization",
+   "power bi",
+   "tableau",
+   "machine learning",
+   "regression",
+   "deep learning",
+   "aws",
+   "testing",
+   "java",
+   "javascript",
+   "communication",
+   "security fundamentals",
+   "r"
+  ],
+  "min_postings_per_skill": 50
+ },
+ "target": {
+  "high_pay_definition": "salary band 15 LPA or above (15to25 or 25to50)",
+  "segments": [
+   "Data Science / ML",
+   "Data Engineering / Big Data",
+   "Data / BI Analyst",
+   "Business / Product Analyst",
+   "Marketing & Digital Analytics",
+   "Finance / Risk Analytics",
+   "Software / IT"
+  ]
+ },
+ "pay": {
+  "intercept": -1.158458557527907,
+  "exp_coef": 1.214419603592053,
+  "exp_mean": 4.368763557483731,
+  "exp_scale": 3.011298390061416,
+  "skill_coef": {
+   "python": 0.05899533452091171,
+   "git": -0.08066696577518309,
+   "linux": 0.06563451973705352,
+   "networking": -0.5305285288502027,
+   "algorithms": 0.5855098722209657,
+   "sql": -0.043741135412755455,
+   "excel": -0.038387800119384426,
+   "statistics": 0.4055305764101144,
+   "data visualization": 0.33177174102199025,
+   "power bi": -0.6916346626863327,
+   "tableau": 0.3131810465007125,
+   "machine learning": 0.5397485557932199,
+   "regression": 0.576370555942754,
+   "deep learning": 0.3262282725261703,
+   "aws": 0.2633927657946011,
+   "testing": -0.19558161877376923,
+   "java": 0.17825501199261135,
+   "javascript": -0.18965233426057496,
+   "communication": -0.17785565824308971,
+   "security fundamentals": -0.2863998841501773,
+   "r": 0.4126486181386883
+  },
+  "support": {
+   "python": 962,
+   "git": 86,
+   "linux": 329,
+   "networking": 164,
+   "algorithms": 264,
+   "sql": 1756,
+   "excel": 627,
+   "numpy": 7,
+   "pandas": 4,
+   "statistics": 214,
+   "linear algebra": 1,
+   "data visualization": 115,
+   "power bi": 92,
+   "tableau": 201,
+   "machine learning": 752,
+   "feature engineering": 0,
+   "regression": 239,
+   "classification": 0,
+   "model evaluation": 2,
+   "scikit-learn": 0,
+   "deep learning": 205,
+   "rest apis": 24,
+   "docker": 44,
+   "aws": 184,
+   "ci/cd": 41,
+   "model deployment": 0,
+   "testing": 458,
+   "system design": 16,
+   "java": 951,
+   "javascript": 628,
+   "communication": 313,
+   "security fundamentals": 77,
+   "cryptography": 4,
+   "network security": 35,
+   "vulnerability assessment": 20,
+   "incident response": 49,
+   "r": 756
+  },
+  "base_rate": 0.314352856109906,
+  "cv": {
+   "exp_only": {
+    "auc": 0.7950679249796885,
+    "auc_fold_sd": 0.01691434172880794,
+    "brier": 0.16472676475779213,
+    "accuracy": 0.7575921908893709,
+    "majority_accuracy": 0.685647143890094
+   },
+   "skills_only": {
+    "auc": 0.6388762508097677,
+    "auc_fold_sd": 0.020637683539343227,
+    "brier": 0.2055725390569789,
+    "accuracy": 0.6845625451916124,
+    "majority_accuracy": 0.685647143890094
+   },
+   "logistic (served)": {
+    "auc": 0.8078288642541942,
+    "auc_fold_sd": 0.019580712455476813,
+    "brier": 0.16180048140293923,
+    "accuracy": 0.762472885032538,
+    "majority_accuracy": 0.685647143890094
+   },
+   "gradient_boosting": {
+    "auc": 0.8069407538810863,
+    "auc_fold_sd": 0.018581893272718062,
+    "brier": 0.161026939091133,
+    "accuracy": 0.7612075198843095,
+    "majority_accuracy": 0.685647143890094
+   }
+  },
+  "reliability": [
+   {
+    "mean_predicted": 0.07349335010219445,
+    "observed_rate": 0.03884372177055104,
+    "n": 1107
+   },
+   {
+    "mean_predicted": 0.1421692964590268,
+    "observed_rate": 0.14724480578139115,
+    "n": 1107
+   },
+   {
+    "mean_predicted": 0.23388918851790164,
+    "observed_rate": 0.2694394213381555,
+    "n": 1106
+   },
+   {
+    "mean_predicted": 0.39598269778918155,
+    "observed_rate": 0.43128390596745025,
+    "n": 1106
+   },
+   {
+    "mean_predicted": 0.7213163491447221,
+    "observed_rate": 0.6853526220614828,
+    "n": 1106
+   }
+  ],
+  "coef_ci95": {
+   "python": [
+    -0.1800131341450826,
+    0.29822868591885593
+   ],
+   "git": [
+    -0.7529665478645916,
+    0.41581767698058153
+   ],
+   "linux": [
+    -0.31476319120451507,
+    0.35322969137305193
+   ],
+   "networking": [
+    -1.0519047215114656,
+    -0.07486316000472838
+   ],
+   "algorithms": [
+    0.28018133745810436,
+    0.9163163548888954
+   ],
+   "sql": [
+    -0.20902038593832103,
+    0.13189898825553734
+   ],
+   "excel": [
+    -0.39820000570427705,
+    0.30612859057380953
+   ],
+   "statistics": [
+    0.026316143318052723,
+    0.7424042173677183
+   ],
+   "data visualization": [
+    -0.3565271070801752,
+    0.8565665560448341
+   ],
+   "power bi": [
+    -1.3788299814453582,
+    -0.23005078506938192
+   ],
+   "tableau": [
+    -0.1624398208246003,
+    0.7337373685924977
+   ],
+   "machine learning": [
+    0.2577240586747846,
+    0.81400122956449
+   ],
+   "regression": [
+    0.21453378561300845,
+    0.9244984426374118
+   ],
+   "deep learning": [
+    -0.10554606922186367,
+    0.7183382170502772
+   ],
+   "aws": [
+    -0.20241765257933023,
+    0.7337536581771139
+   ],
+   "testing": [
+    -0.5003617716933266,
+    0.08218270165714758
+   ],
+   "java": [
+    -0.022816973700330638,
+    0.3864805374784695
+   ],
+   "javascript": [
+    -0.43832914335919354,
+    0.06122979681426062
+   ],
+   "communication": [
+    -0.7018068880654139,
+    0.2947840712601064
+   ],
+   "security fundamentals": [
+    -0.8787250329135332,
+    0.2509174289336362
+   ],
+   "r": [
+    0.14516140942215291,
+    0.65202632778974
+   ]
+  },
+  "skills_with_clear_direction": [
+   "networking",
+   "algorithms",
+   "statistics",
+   "power bi",
+   "machine learning",
+   "regression",
+   "r"
+  ],
+  "shuffled_label_auc": {
+   "mean": 0.500553429107148,
+   "max": 0.5164540715191129
+  }
+ },
+ "segment": {
+  "classes": [
+   "Business / Product Analyst",
+   "Data / BI Analyst",
+   "Data Engineering / Big Data",
+   "Data Science / ML",
+   "Finance / Risk Analytics",
+   "Marketing & Digital Analytics",
+   "Software / IT"
+  ],
+  "intercept": [
+   -0.22030750962700532,
+   0.9231761603672423,
+   -0.25660235482929594,
+   -0.47962637182404366,
+   -0.5517051944486764,
+   -0.9678787088620062,
+   1.5529439792239907
+  ],
+  "coef": [
+   {
+    "python": -0.6727049150000467,
+    "git": -0.6323759323350593,
+    "linux": -1.2686865471327238,
+    "networking": -0.6504387844485578,
+    "algorithms": -1.3909344970360886,
+    "sql": 0.15437211415503854,
+    "excel": 0.741594338876242,
+    "statistics": -0.7690951658781322,
+    "data visualization": 1.1514977133907285,
+    "power bi": -0.4220329590046774,
+    "tableau": 0.6681980882463254,
+    "machine learning": 0.050849623865640764,
+    "regression": 0.016375611960424044,
+    "deep learning": -0.6616370222591434,
+    "aws": 0.008522523248045647,
+    "testing": 1.2978828747430562,
+    "java": -0.3255256186372453,
+    "javascript": -0.6234150817697003,
+    "communication": 0.4152297544475338,
+    "security fundamentals": 0.7378558874570342,
+    "r": -0.11651144522627717
+   },
+   {
+    "python": 0.38541842627064643,
+    "git": -0.3606125522757158,
+    "linux": -0.3846928011845959,
+    "networking": -1.3910556610802791,
+    "algorithms": 0.06584471830870296,
+    "sql": -0.031881262880023756,
+    "excel": 1.0969055548734183,
+    "statistics": 0.5237915837880247,
+    "data visualization": 0.7823953226052089,
+    "power bi": 0.47766987775535596,
+    "tableau": 0.7730105707454135,
+    "machine learning": 0.3363678748033021,
+    "regression": 1.0204635825303243,
+    "deep learning": 0.5556028428066702,
+    "aws": 0.5335262919141447,
+    "testing": -1.1494319106005562,
+    "java": -1.1679609258412154,
+    "javascript": -0.2643506906794622,
+    "communication": -0.6587076619306155,
+    "security fundamentals": -0.41760733471834605,
+    "r": 1.0492683206840752
+   },
+   {
+    "python": 0.7694684894175832,
+    "git": 0.3222435755572565,
+    "linux": 0.9437592204827714,
+    "networking": -1.1922707848373424,
+    "algorithms": 0.6813449653954234,
+    "sql": 0.7427927059163834,
+    "excel": -1.2042553503422149,
+    "statistics": -0.8381055124262013,
+    "data visualization": -0.3418738844917137,
+    "power bi": 1.0517941713872718,
+    "tableau": 0.09684786639885368,
+    "machine learning": -0.1355432871244019,
+    "regression": -0.8443369440630929,
+    "deep learning": -0.22553937101446317,
+    "aws": 0.7856331999903772,
+    "testing": -0.27662173031170006,
+    "java": 0.9379137275570693,
+    "javascript": -0.044030810564821256,
+    "communication": -0.9901809653125175,
+    "security fundamentals": -0.7509185207121506,
+    "r": 0.08515760661219283
+   },
+   {
+    "python": 1.1118079957704101,
+    "git": 0.699484244801262,
+    "linux": -0.09487632214480395,
+    "networking": -0.9389081376036195,
+    "algorithms": 1.011754060682883,
+    "sql": -0.41008911503961293,
+    "excel": -0.5341691949834084,
+    "statistics": 1.0502838657034703,
+    "data visualization": 0.060333685272154124,
+    "power bi": -0.32276174392141976,
+    "tableau": 0.31875654278804855,
+    "machine learning": 2.0298653671246134,
+    "regression": 0.24546955235333207,
+    "deep learning": 2.211286127444755,
+    "aws": -0.7371395797852686,
+    "testing": -1.3522844518728048,
+    "java": 0.4027790452600974,
+    "javascript": -0.4161950196174273,
+    "communication": -0.6944580583644993,
+    "security fundamentals": -0.5793788981646154,
+    "r": 0.9671039343548381
+   },
+   {
+    "python": -0.7464828071210423,
+    "git": -0.444184082829845,
+    "linux": -0.18689400667900996,
+    "networking": 0.8694598297756,
+    "algorithms": -0.25695248611115656,
+    "sql": -0.033312300347028645,
+    "excel": 1.0531069158897106,
+    "statistics": 1.1706731993153885,
+    "data visualization": -1.1734527936427375,
+    "power bi": -0.8244574811198421,
+    "tableau": -0.8660318205992867,
+    "machine learning": -1.00324436932228,
+    "regression": 0.7914386664965077,
+    "deep learning": -0.8257229030632529,
+    "aws": -1.050562016147649,
+    "testing": 0.8932135429562263,
+    "java": -0.8138306103704631,
+    "javascript": -1.0644413042689367,
+    "communication": 0.483331102400326,
+    "security fundamentals": 1.2179616147390246,
+    "r": 0.4033759033654999
+   },
+   {
+    "python": -1.0112216660432831,
+    "git": -0.1719208681804267,
+    "linux": -0.11087900161900324,
+    "networking": 1.9427241207248196,
+    "algorithms": -0.6557667121025754,
+    "sql": -0.24499498420502092,
+    "excel": 0.4096159063005721,
+    "statistics": -0.875525448349279,
+    "data visualization": -0.33681183501985446,
+    "power bi": -0.558105527087657,
+    "tableau": -0.6967248042910283,
+    "machine learning": -0.3594209924040943,
+    "regression": -0.6174936973387283,
+    "deep learning": -0.5957773691073559,
+    "aws": -0.2053257759834419,
+    "testing": -0.2693250670824799,
+    "java": 0.2721707462753768,
+    "javascript": 1.05609510643869,
+    "communication": 1.869628530037026,
+    "security fundamentals": -0.4914647623249894,
+    "r": -1.2404353903028804
+   },
+   {
+    "python": 0.1637144767057323,
+    "git": 0.5873656152625272,
+    "linux": 1.1022694582773636,
+    "networking": 1.3604894174693773,
+    "algorithms": 0.5447099508628082,
+    "sql": -0.17688715759973486,
+    "excel": -1.5627981706143244,
+    "statistics": -0.26202252215327493,
+    "data visualization": -0.14208820811378559,
+    "power bi": 0.5978936619909712,
+    "tableau": -0.294056443288326,
+    "machine learning": -0.9188742169427748,
+    "regression": -0.6119167719387659,
+    "deep learning": -0.4582123048072148,
+    "aws": 0.6653453567637939,
+    "testing": 0.8565667421682612,
+    "java": 0.6944536357563885,
+    "javascript": 1.3563378004616542,
+    "communication": -0.4248427012772577,
+    "security fundamentals": 0.28355201372404276,
+    "r": -1.1479589294874362
+   }
+  ],
+  "cv": {
+   "majority_class": {
+    "accuracy": 0.3950562789671154,
+    "class": "Software / IT"
+   },
+   "logistic (served)": {
+    "accuracy": 0.5983226660781285,
+    "macro_f1": 0.2853782011139517
+   },
+   "gradient_boosting": {
+    "accuracy": 0.6029574045464577,
+    "macro_f1": 0.2996228910017793
+   },
+   "recall_by_segment": {
+    "Software / IT": 0.9111731843575419,
+    "Data / BI Analyst": 0.582427536231884,
+    "Data Science / ML": 0.6803149606299213,
+    "Data Engineering / Big Data": 0.007352941176470588,
+    "Business / Product Analyst": 0.0,
+    "Finance / Risk Analytics": 0.010309278350515464,
+    "Marketing & Digital Analytics": 0.0
+   }
+  },
+  "class_counts": {
+   "Software / IT": 1790,
+   "Data / BI Analyst": 1104,
+   "Data Science / ML": 635,
+   "Data Engineering / Big Data": 408,
+   "Business / Product Analyst": 272,
+   "Finance / Risk Analytics": 194,
+   "Marketing & Digital Analytics": 128
+  }
+ },
+ "why_logistic": "Gradient boosting was tried on the same folds and did not do meaningfully better, so the simpler logistic model is served: every weight can be read, explained to a judge, and exported without scikit-learn.",
+ "limitations": [
+  "Postings show what employers ask for and offer, not what a person can do. Applying the model to someone's skill mix describes how similar postings are paid; it does not predict that person's salary.",
+  "Only about a third of postings mention a skill from the app's 37-skill vocabulary, and a skill needs at least 50 postings to be used; skills below that (for example numpy, git, docker) are ignored by the model rather than guessed.",
+  "Skills add only a small amount on top of experience for the pay question (compare 'exp_only' with 'logistic').",
+  "Salary is an employer-stated band and 'high pay' means the 15 LPA band or above; the file has no dates, so drift over time cannot be checked.",
+  "Repeated postings are kept in the same cross-validation fold; reported scores are out-of-fold.",
+  "Most single-skill weights are too uncertain to interpret. Skill advice is shown only for skills whose weight has a bootstrap 95% interval that excludes zero."
+ ],
+ "golden": [
+  {
+   "skills": [],
+   "experience_years": 2.0,
+   "p_high_pay": 0.1077673898201164,
+   "segment_probs": {
+    "Business / Product Analyst": 0.07719014804535101,
+    "Data / BI Analyst": 0.24219798291097475,
+    "Data Engineering / Big Data": 0.07443877591259401,
+    "Data Science / ML": 0.059558139546274404,
+    "Finance / Risk Analytics": 0.05541632071284195,
+    "Marketing & Digital Analytics": 0.036550710811701394,
+    "Software / IT": 0.45464792206026233
+   }
+  },
+  {
+   "skills": [
+    "python"
+   ],
+   "experience_years": 1.0,
+   "p_high_pay": 0.07885228389331043,
+   "segment_probs": {
+    "Business / Product Analyst": 0.030017732082806652,
+    "Data / BI Analyst": 0.27134614339276614,
+    "Data Engineering / Big Data": 0.12244559828245227,
+    "Data Science / ML": 0.13796255738561428,
+    "Finance / Risk Analytics": 0.020017616273367518,
+    "Marketing & Digital Analytics": 0.010132016151015074,
+    "Software / IT": 0.4080783364319781
+   }
+  },
+  {
+   "skills": [
+    "python",
+    "sql",
+    "machine learning"
+   ],
+   "experience_years": 3.0,
+   "p_high_pay": 0.23949296664217856,
+   "segment_probs": {
+    "Business / Product Analyst": 0.024977645645533637,
+    "Data / BI Analyst": 0.24934890382309322,
+    "Data Engineering / Big Data": 0.15230536573970396,
+    "Data Science / ML": 0.472354523764819,
+    "Finance / Risk Analytics": 0.004811588437291176,
+    "Marketing & Digital Analytics": 0.003751874515052708,
+    "Software / IT": 0.09245009807450626
+   }
+  },
+  {
+   "skills": [
+    "sql",
+    "excel",
+    "tableau"
+   ],
+   "experience_years": 5.0,
+   "p_high_pay": 0.33786198036381276,
+   "segment_probs": {
+    "Business / Product Analyst": 0.17399187952192105,
+    "Data / BI Analyst": 0.7179232148091701,
+    "Data Engineering / Big Data": 0.024384177630774745,
+    "Data Science / ML": 0.01502962807577986,
+    "Finance / Risk Analytics": 0.030484220758351395,
+    "Marketing & Digital Analytics": 0.010126634236105353,
+    "Software / IT": 0.028060244967897566
+   }
+  },
+  {
+   "skills": [
+    "java",
+    "aws",
+    "docker",
+    "linux"
+   ],
+   "experience_years": 8.0,
+   "p_high_pay": 0.6928030603139586,
+   "segment_probs": {
+    "Business / Product Analyst": 0.002399423894251156,
+    "Data / BI Analyst": 0.0132669309182,
+    "Data Engineering / Big Data": 0.1627035136423121,
+    "Data Science / ML": 0.0058847401677991325,
+    "Finance / Risk Analytics": 0.0010813756590565475,
+    "Marketing & Digital Analytics": 0.00530851999697167,
+    "Software / IT": 0.8093554957214093
+   }
+  }
+ ]
+}

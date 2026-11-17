@@ -1,0 +1,19 @@
+# Render Blueprint: one web service, Python backend serving the HTML frontend.
+services:
+  - type: web
+    name: skilltwin
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    # ONE worker with threads: the SQLite file and the in-memory rate limiter live in this single process.
+    startCommand: cd backend && gunicorn app:app --workers 1 --threads 8 --timeout 90 --bind 0.0.0.0:$PORT
+    healthCheckPath: /api/ai/status
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.4
+      - key: SKILLTWIN_TRUST_PROXY
+        value: "1"
+      - key: GEMINI_MODEL
+        value: gemini-3.6-flash
+      - key: GEMINI_API_KEY
+        sync: false        # you paste it in the Render dashboard; it is never stored in the repo
